@@ -9,4 +9,6 @@ import java.util.Optional;
 public interface ShortenerJpaRepositoryImpl extends JpaRepository<Shortener, Integer> {
 
     public List<Shortener> findBySourceUrl(String sourceUrl);
+
+
 }

@@ -2,6 +2,7 @@ package com.aom.shortener;
 
 import com.aom.shortener.domain.entities.Shortener;
 import com.aom.shortener.domain.repositories.ShortenerRepository;
+import com.aom.shortener.domain.services.ShortenerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -20,20 +21,15 @@ public class ShortenerApplication {
 	public String hello () { return "Hello word!";}
 
 	@Bean
-	public CommandLineRunner init(@Autowired ShortenerRepository shortenerRepository) {
+	public CommandLineRunner init(@Autowired ShortenerService service) {
 		return args -> {
-			System.out.println("Salvando clientes");
+			String url = "https://www.google.com1";
 
-			Shortener shortener = new Shortener("http://test.com", "t.c/10");
+			service.create(url);
 
-			System.out.println("Salvando shortener");
-			shortenerRepository.save(shortener);
-			System.out.println("Shortener salvo");
+			Optional<Shortener> shortener = service.findBySourceUrl(url);
 
-
-			Optional<Shortener> shortenerOptional = shortenerRepository.findBySourceUrl(shortener.getSourceUrl());
-
-			shortenerOptional.ifPresent(System.out::println);
+			shortener.ifPresent(System.out::println);
 		};
 	}
 

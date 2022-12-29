@@ -4,11 +4,11 @@ import com.aom.shortener.domain.entities.Shortener;
 import com.aom.shortener.domain.repositories.ShortenerRepository;
 import com.aom.shortener.infrastructure.db.jpa.impl.ShortenerJpaRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-@Service
+@Repository
 public class ShortenerJpaRepository implements ShortenerRepository {
 
     private final ShortenerJpaRepositoryImpl impl;
