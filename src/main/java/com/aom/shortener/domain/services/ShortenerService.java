@@ -17,7 +17,7 @@ public class ShortenerService {
 
     private static final int MAX_ATTEMPT = 10;
     private static final int SIZE_RANDOM = 6;
-    private static final String SHORTENED_URL_FORMAT = "http://s.io/%s";
+    private static final String SHORTENED_URL_FORMAT = "https://link.to/%s";
 
     private final ShortenerRepository repository;
 
