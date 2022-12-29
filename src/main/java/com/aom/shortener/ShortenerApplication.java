@@ -14,11 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Optional;
 
 @SpringBootApplication
-@RestController
 public class ShortenerApplication {
-
-	@GetMapping("/")
-	public String hello () { return "Hello word!";}
 
 	@Bean
 	public CommandLineRunner init(@Autowired ShortenerService service) {
@@ -27,9 +23,9 @@ public class ShortenerApplication {
 
 			service.create(url);
 
-			Optional<Shortener> shortener = service.findBySourceUrl(url);
+			Shortener shortener = service.findBySourceUrl(url);
 
-			shortener.ifPresent(System.out::println);
+			System.out.println(shortener);
 		};
 	}
 

@@ -12,7 +12,9 @@ public enum ErrorMessages {
 
     SHORTENED_URL_IS_REQUIRED("Shortened url is required"),
 
-    EXISTING_SHORTENER("Shortener already exists");
+    EXISTING_SHORTENER("Shortener already exists"),
+
+    SHORTENER_NOT_FOUND("Shortener not found");
 
     private final String message;
 }

@@ -2,12 +2,9 @@ package com.aom.shortener.domain.entities;
 
 import com.aom.shortener.domain.enums.ErrorMessages;
 import com.aom.shortener.domain.exceptions.ValidateException;
-import com.aom.shortener.domain.repositories.ShortenerRepository;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.apache.commons.lang3.Validate;
-import org.springframework.beans.factory.annotation.Autowired;
 
 @Getter
 @Entity

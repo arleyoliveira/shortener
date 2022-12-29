@@ -2,6 +2,7 @@ package com.aom.shortener.domain.services;
 
 import com.aom.shortener.domain.entities.Shortener;
 import com.aom.shortener.domain.enums.ErrorMessages;
+import com.aom.shortener.domain.exceptions.NotFound;
 import com.aom.shortener.domain.exceptions.ValidateException;
 import com.aom.shortener.domain.helpers.RandomString;
 import com.aom.shortener.domain.repositories.ShortenerRepository;
@@ -36,8 +37,10 @@ public class ShortenerService {
         repository.save(shortener);
     }
 
-    public Optional<Shortener> findBySourceUrl(String sourceUrl) {
-        return repository.findBySourceUrl(sourceUrl);
+    public Shortener findBySourceUrl(String sourceUrl) {
+        return repository
+                .findBySourceUrl(sourceUrl)
+                .orElseThrow(() -> new NotFound(ErrorMessages.SHORTENER_NOT_FOUND.getMessage()));
     }
 
     private String generateShortenedUrl() {
