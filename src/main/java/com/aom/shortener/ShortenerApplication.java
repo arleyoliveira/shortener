@@ -16,19 +16,6 @@ import java.util.Optional;
 @SpringBootApplication
 public class ShortenerApplication {
 
-	@Bean
-	public CommandLineRunner init(@Autowired ShortenerService service) {
-		return args -> {
-			String url = "https://www.google.com1";
-
-			service.create(url);
-
-			Shortener shortener = service.findBySourceUrl(url);
-
-			System.out.println(shortener);
-		};
-	}
-
 	public static void main(String[] args) {
 		SpringApplication.run(ShortenerApplication.class, args);
 	}
