@@ -14,6 +14,8 @@ public enum ErrorMessages {
 
     EXISTING_SHORTENER("Shortener already exists"),
 
+    UNABLE_TO_CREATE_SHORTENED_URL("Unable To Create Shortened Url"),
+
     SHORTENER_NOT_FOUND("Shortener not found");
 
     private final String message;

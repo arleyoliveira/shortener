@@ -1,6 +1,6 @@
 package com.aom.shortener.application.usecase;
 
-import com.aom.shortener.application.dto.CreateShortenerDTO;
+import com.aom.shortener.application.dto.ShortenerRequestDTO;
 import com.aom.shortener.domain.services.ShortenerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ public class CreateShortener {
         this.service = service;
     }
 
-    public void create(CreateShortenerDTO dto) {
+    public void create(ShortenerRequestDTO dto) {
         service.create(dto.getSourceUrl());
     }
 }

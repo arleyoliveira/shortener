@@ -24,6 +24,11 @@ public class ShortenerJpaRepository implements ShortenerRepository {
     }
 
     @Override
+    public Optional<Shortener> findByShortenedUrl(String shortenedUrl) {
+        return impl.findByShortenedUrl(shortenedUrl).stream().findFirst();
+    }
+
+    @Override
     public Shortener save(Shortener shortener) {
         return impl.save(shortener);
     }
