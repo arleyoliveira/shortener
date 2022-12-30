@@ -32,8 +32,7 @@ public class ShortenerController {
     @ApiResponses(value = { @ApiResponse(responseCode = "200", description = "successful operation") })
     @GetMapping("/")
     @ResponseStatus(HttpStatus.OK)
-    public String findBySourceUrl(@Parameter(name = "Filter", description = "Find shortener object") ShortenerRequestDTO dto) {
-        System.out.println(dto);
+    public String findBySourceUrl(@Parameter(name = "Filter", description = "Find shortener object") @Valid ShortenerRequestDTO dto) {
         return useCaseForFind.findBySourceUrl(dto.getSourceUrl());
     }
 
