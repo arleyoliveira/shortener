@@ -6,7 +6,7 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum ErrorMessages {
-    SHORTENED_URL_SIZE("Shortened field must have size between 5 and 10"),
+    SHORTENED_URL_SIZE("Shortened field must have size between 5 and 20"),
 
     SOURCE_URL_IS_REQUIRED("Source url is required"),
 
