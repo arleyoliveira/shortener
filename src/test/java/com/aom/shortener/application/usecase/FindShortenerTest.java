@@ -1,7 +1,5 @@
 package com.aom.shortener.application.usecase;
 
-import com.aom.shortener.application.dto.ShortenerRequestDTO;
-import com.aom.shortener.domain.entities.Shortener;
 import com.aom.shortener.domain.entities.factories.ShortenerFactory;
 import com.aom.shortener.domain.exceptions.NotFound;
 import com.aom.shortener.domain.services.ShortenerService;
