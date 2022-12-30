@@ -38,7 +38,7 @@ class ShortenerControllerTest {
 
     @Test
     public void shouldCreateShortenerWithSuccessful() throws Exception {
-        ShortenerRequestDTO shortenerRequestDTO = new ShortenerRequestDTO();
+        var shortenerRequestDTO = new ShortenerRequestDTO();
 
         doNothing().when(createShortener).create(shortenerRequestDTO);
 
@@ -50,7 +50,7 @@ class ShortenerControllerTest {
 
     @Test
     public void shouldCreateShortenerWithError() throws Exception {
-        ShortenerRequestDTO shortenerRequestDTO = new ShortenerRequestDTO();
+        var shortenerRequestDTO = new ShortenerRequestDTO();
 
         doNothing().when(createShortener).create(shortenerRequestDTO);
 
