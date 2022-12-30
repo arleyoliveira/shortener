@@ -45,13 +45,4 @@ public class Shortener {
             throw new ValidateException(ErrorMessages.SHORTENED_URL_SIZE.getMessage());
         }
     }
-
-    @Override
-    public String toString() {
-        return "Shortener{" +
-                "id=" + id +
-                ", sourceUrl='" + sourceUrl + '\'' +
-                ", shortenedUrl='" + shortenedUrl + '\'' +
-                '}';
-    }
 }
