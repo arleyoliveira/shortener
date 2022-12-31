@@ -1,0 +1,6 @@
+CREATE TABLE shorteners (
+	id INT NOT NULL AUTO_INCREMENT,
+	source_url VARCHAR(255) NOT NULL UNIQUE,
+	shortened_url VARCHAR(20) NOT NULL UNIQUE,
+	PRIMARY KEY (id)
+);
