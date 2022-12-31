@@ -25,7 +25,7 @@ class ShortenerJpaRepositoryTest {
 
     @Test
     public void shouldFindAShortenerByTheSourceUrl() {
-        var sourceUrl = "www.test.com";
+        var sourceUrl = "http://www.test.com";
         var shortenedUrl = "https://link.to/ab20";
         var shortener = new Shortener(sourceUrl, shortenedUrl);
 
@@ -42,7 +42,7 @@ class ShortenerJpaRepositoryTest {
 
     @Test
     public void shouldFindAShortenerByTheShortenedUrl() {
-        var sourceUrl = "www.test.com";
+        var sourceUrl = "http://www.test.com";
         var shortenedUrl = "https://link.to/ab20";
         var shortener = new Shortener(sourceUrl, shortenedUrl);
 
@@ -59,7 +59,7 @@ class ShortenerJpaRepositoryTest {
 
     @Test
     public void shouldSuccessfullySaveAShortenedUrl() {
-        var sourceUrl = "www.test.com";
+        var sourceUrl = "http://www.test.com";
         var shortenedUrl = "https://link.to/ab20";
         var shortener = new Shortener(sourceUrl, shortenedUrl);
 

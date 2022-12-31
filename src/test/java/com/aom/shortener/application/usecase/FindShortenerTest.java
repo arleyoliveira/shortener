@@ -26,7 +26,7 @@ class FindShortenerTest {
     @Test
     public void shouldGetShortenerWithSuccessful() {
         //Arrange
-        var sourceUrl = "www.test.com";
+        var sourceUrl = "http://www.test.com";
         var shortenerExpected = "https://link.to/1234";
 
         var shortener = ShortenerFactory.create(sourceUrl, shortenerExpected);

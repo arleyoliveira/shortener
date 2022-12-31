@@ -15,7 +15,7 @@ class ShortenerTest {
     @Test
     public void shouldCreateShortenerEntityWithSuccessful() {
         //Arrange
-        var sourceUrlExpected = "www.test.com";
+        var sourceUrlExpected = "http://www.test.com";
         var shortenerExpected = "https://link.to/1234";
 
         var result = new Shortener(sourceUrlExpected, shortenerExpected);
@@ -27,7 +27,7 @@ class ShortenerTest {
     @Test
     public void shouldThrowExceptionOnCreationWhenShortenedUrlIsEmpty() {
         //Arrange
-        var sourceUrlExpected = "www.test.com";
+        var sourceUrlExpected = "http://www.test.com";
         var shortenerExpected = "";
 
         assertThrows(ValidateException.class, () -> {
@@ -49,7 +49,7 @@ class ShortenerTest {
     @Test
     public void shouldThrowExceptionOnCreationWhenShortenedUrlHasLengthLessThanFive() {
         //Arrange
-        var sourceUrlExpected = "www.test.com";
+        var sourceUrlExpected = "http://www.test.com";
         var shortenerExpected = "http";
 
         assertThrows(ValidateException.class, () -> {
@@ -60,8 +60,19 @@ class ShortenerTest {
     @Test
     public void shouldThrowExceptionOnCreationWhenShortenedUrlHasLengthGreaterThanTwenty() {
         //Arrange
+        var sourceUrlExpected = "http://www.test.com";
+        var shortenerExpected = "http://link.to/123456789abcdefgh220010";
+
+        assertThrows(ValidateException.class, () -> {
+            new Shortener(sourceUrlExpected, shortenerExpected);
+        });
+    }
+
+    @Test
+    public void shouldThrowExceptionWhenSourceUrlIsInvalid() {
+        //Arrange
         var sourceUrlExpected = "www.test.com";
-        var shortenerExpected = "http://link.to/123456789abcdefgh";
+        var shortenerExpected = "http://link.to/1020";
 
         assertThrows(ValidateException.class, () -> {
             new Shortener(sourceUrlExpected, shortenerExpected);

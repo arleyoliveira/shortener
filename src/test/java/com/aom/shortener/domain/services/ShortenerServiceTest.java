@@ -30,7 +30,7 @@ class ShortenerServiceTest {
 
     @Test
     public void shouldSuccessfullyCreateShortenedUrl() {
-        var sourceUrl = "www.test.com";
+        var sourceUrl = "http://www.test.com";
         var optionalEmpty = Optional.<Shortener>empty();
         var randomText = "1ab2";
         var shortenedUrl = String.format("https://link.to/%s", randomText);
@@ -56,7 +56,7 @@ class ShortenerServiceTest {
 
     @Test
     public void shouldThrowExceptionWhenTryingToCreateEqualShortener() {
-        var sourceUrl = "www.test.com";
+        var sourceUrl = "http://www.test.com";
         var randomText = "1ab2";
         var shortenedUrl = String.format("https://link.to/%s", randomText);
         var shortener = new Shortener(sourceUrl, shortenedUrl);
@@ -85,7 +85,7 @@ class ShortenerServiceTest {
 
     @Test
     public void shouldThrowExceptionWhenTryingToCreateShortenerWithExistingSourceUrl() {
-        var sourceUrl = "www.test.com";
+        var sourceUrl = "http://www.test.com";
         var randomText = "1ab2";
         var shortenedUrl = String.format("https://link.to/%s", randomText);
         var shortener = new Shortener(sourceUrl, shortenedUrl);
@@ -100,8 +100,8 @@ class ShortenerServiceTest {
 
     @Test
     public void shouldSuccessfullyFindShortenedUrl() {
-        var sourceUrl = "www.test.com";
-        var shortenedUrl = "www.link.to/102030";
+        var sourceUrl = "http://www.test.com";
+        var shortenedUrl = "http://link.to/1020";
         var shortener = new Shortener(sourceUrl, shortenedUrl);
         var optionalContains = Optional.of(shortener);
 
