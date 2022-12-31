@@ -9,5 +9,7 @@ public interface ShortenerRepository {
 
     public Optional<Shortener> findBySourceUrl(String sourceUrl);
 
+    public Optional<Shortener> findByShortenedUrl(String shortenedUrl);
+
     public Shortener save(Shortener shortener);
 }
